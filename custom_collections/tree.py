@@ -11,7 +11,7 @@ from guardian.admin import GuardedModelAdmin
 from guardian.shortcuts import assign_perm
 
 try:
-    from collection_management.models import CollectionItem
+    from models import CollectionItem
 except:
     pass
 
