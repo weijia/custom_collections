@@ -5,7 +5,7 @@ from django.core.context_processors import csrf
 from django.shortcuts import render_to_response, redirect
 from django.contrib.auth.models import User
 from django.conf import settings
-from collection_management.models import CollectionItem
+from models import CollectionItem
 
 '''
 [
@@ -20,7 +20,7 @@ from collection_management.models import CollectionItem
 '''
 
 from django.core import serializers
-from objsys.models import UfsObj
+from obj_sys.models import UfsObj
 
 
 def collections(request):
@@ -45,9 +45,6 @@ def get_collection_by_protocol(collection_id):
         collection_module = __import__("custom_collections.modules." + module_name, globals(), locals(),
                                        ["get_collection"], -1)
         return collection_module.get_collection(item_url)
-
-
-
 
 
 def collections_jstree(request):
@@ -94,5 +91,5 @@ def collections_jstree(request):
 
     c.update(csrf(request))
     #print c
-    return render_to_response('collection_management/collection_in_json.json', c, mimetype="application/json")
+    return render_to_response('custom_collections/collection_in_json.json', c, mimetype="application/json")
 
