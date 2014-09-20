@@ -6,7 +6,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib import admin
 from django.conf import settings
 
-from objsys.models import UfsObj
+from obj_sys.models import UfsObj
 from guardian.admin import GuardedModelAdmin
 from guardian.shortcuts import assign_perm
 
